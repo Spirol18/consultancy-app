@@ -74,7 +74,7 @@ export const CountryMarquee = () => {
                                     src={`https://flagcdn.com/w80/${flag.code}.png`}
                                     alt={flag.name}
                                     fill
-                                    className="object-cover rounded-sm"
+                                    className={`${flag.code === 'np' ? 'object-contain' : 'object-cover'} rounded-sm`}
                                 />
                             </div>
                         </div>
