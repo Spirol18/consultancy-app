@@ -1,26 +1,152 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  /* Navy Blue Palette based on Logo */
+  --color-navy-50: #eff6ff;
+  --color-navy-100: #dbeafe;
+  --color-navy-200: #bfdbfe;
+  --color-navy-300: #93c5fd;
+  --color-navy-400: #60a5fa;
+  --color-navy-500: #3b82f6;
+  --color-navy-600: #2563eb;
+  /* Royal Blue */
+  --color-navy-700: #1d4ed8;
+  --color-navy-800: #1e40af;
+  --color-navy-900: #1e3a8a;
+  /* Deep Blue */
+  --color-navy-950: #172554;
+  /* Logo Base Color */
+  --color-navy-950: #172554;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-gold-400: #E5C558;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #B5952F;
+
+  --font-playfair: var(--font-playfair);
+  --font-inter: var(--font-inter);
+
+  --animate-blob: blob 7s infinite;
+
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
   }
 }
 
+:root {
+  --foreground-rgb: 15, 23, 42;
+  /* Slate 900 */
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 240, 249, 255;
+  /* Light Blue */
+  --navbar-rgb: 255, 255, 255;
+  --navbar-border-rgb: 30, 58, 138;
+  /* Navy 900 border in light mode */
+
+  /* Semantic Colors - Light */
+  --text-primary: #1e3a8a;
+  /* Navy 900 */
+  --text-secondary: #475569;
+  /* Slate 600 */
+  --text-accent: #2563eb;
+  /* Navy 600 */
+  --bg-surface: #ffffff;
+  --bg-card: #eff6ff;
+  /* Navy 50 */
+  --border-color: #e2e8f0;
+  /* Slate 200 */
+}
+
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 15, 15, 15;
+  --background-end-rgb: 23, 37, 84;
+  --navbar-rgb: 23, 37, 84;
+  --navbar-border-rgb: 255, 255, 255;
+  /* White border in dark mode */
+
+  /* Semantic Colors - Dark */
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  /* Gray 400 */
+  --text-accent: #fbbf24;
+  /* Gold 400 */
+  --bg-surface: rgba(255, 255, 255, 0.05);
+  --bg-card: rgba(30, 58, 138, 0.4);
+  /* Navy 900 with opacity */
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  font-family: var(--font-inter), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-primary {
+    color: var(--text-primary);
+  }
+
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+
+  .text-accent {
+    color: var(--text-accent);
+  }
+
+  .bg-surface {
+    background-color: var(--bg-surface);
+  }
+
+  .bg-card-custom {
+    background-color: var(--bg-card);
+  }
+
+  .border-custom {
+    border-color: var(--border-color);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a5b4fc;
+  /* Navy 300 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1e3a8a;
+  /* Navy 900 */
 }
