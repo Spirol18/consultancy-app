@@ -73,23 +73,30 @@
 }
 
 .dark {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 15, 15, 15;
-  --background-end-rgb: 23, 37, 84;
-  --navbar-rgb: 23, 37, 84;
+  --foreground-rgb: 248, 250, 252;
+  /* Slate 50 */
+  --background-start-rgb: 2, 6, 23;
+  /* Slate 950 */
+  --background-end-rgb: 15, 23, 42;
+  /* Slate 900 */
+  --navbar-rgb: 15, 23, 42;
+  /* Slate 900 */
   --navbar-border-rgb: 255, 255, 255;
   /* White border in dark mode */
 
   /* Semantic Colors - Dark */
-  --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
-  /* Gray 400 */
+  --text-primary: #f8fafc;
+  /* Slate 50 */
+  --text-secondary: #94a3b8;
+  /* Slate 400 */
   --text-accent: #fbbf24;
   /* Gold 400 */
-  --bg-surface: rgba(255, 255, 255, 0.05);
-  --bg-card: rgba(30, 58, 138, 0.4);
-  /* Navy 900 with opacity */
-  --border-color: rgba(255, 255, 255, 0.1);
+  --bg-surface: rgba(30, 41, 59, 0.5);
+  /* Slate 800 with opacity */
+  --bg-card: rgba(15, 23, 42, 0.6);
+  /* Slate 900 with opacity */
+  --border-color: rgba(148, 163, 184, 0.1);
+  /* Slate 400 with low opacity */
 }
 
 body {

@@ -7,7 +7,7 @@ import { Logo } from "@/components/Logo";
 
 export default function Footer() {
     return (
-        <div className="flex justify-center w-full pb-6 px-4">
+        <div className="flex justify-center w-full pb-6 px-4">  
             <footer className="w-full max-w-7xl bg-indigo-50 dark:bg-navy-950 text-indigo-900 dark:text-white pt-16 pb-8 border border-indigo-100 dark:border-white/10 relative overflow-hidden transition-colors duration-300 rounded-[3rem] shadow-2xl">
                 {/* Background Glow */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-200/50 dark:bg-purple-900/20 blur-[100px] pointer-events-none" />
